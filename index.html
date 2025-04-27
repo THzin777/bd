@@ -3,25 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>CRUD Firebase</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            align-items: center;
-            text-align: center;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        input {
-            margin-bottom: 10px;
-            padding: 8px;
-        }
-        button {
-            padding: 10px 15px;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>CRUD com Firebase</h1>
@@ -29,39 +11,40 @@
     <label for="nome">Nome:</label>
     <input type="text" id="nome" required><br>
 
-    <label>Idade:</label>
-    <input type="number" id="idade" required ><br>
+    <label for="idade">Idade:</label>
+    <input type="number" id="idade" required><br>
 
     <label for="cargo">Cargo:</label> 
-    <input type="text" id="cargo" required ><br>
+    <input type="text" id="cargo" required><br>
 
-    <button type="submit" id="btnEnviar"> Enviar</button>
+    <button type="submit" id="btnEnviar">Enviar</button>
 
-
-    <h2> Listar Funcionários </h2>
+    <h2>Listar Funcionários</h2>
 
     <div id="listar-funcionarios">
-        <p> Carregando lista de Funcionários... </p>
+        <p>Carregando lista de Funcionários...</p>
     </div>
 
     <div id="formulario-edicao" style="display: none;"> 
-<h2> Editar Funcionário</h2>
-<label for="editar-nome">Nome:</label>
-<input type="text" id="editar-nome"><br><br>
+        <h2>Editar Funcionário</h2>
+        
+        <label for="editar-nome">Nome:</label>
+        <input type="text" id="editar-nome"><br><br>
 
-<label for="editar-idade">Idade:</label>
-<input type="number" id="editar-idade"><br><br>
+        <label for="editar-idade">Idade:</label>
+        <input type="number" id="editar-idade"><br><br>
 
-<label for="editar-cargo">Cargo:</label>
-<input type="text" id="editar-cargo"><br><br>
+        <label for="editar-cargo">Cargo:</label>
+        <input type="text" id="editar-cargo"><br><br>
 
-<input type="hidden" id="editar-id">
+        <input type="hidden" id="editar-id">
 
-<button id="btn-salvar-edicao"> Salvar Alterações</button>
-<button id="btn-cancelar-edicao">Cancelar </button>
+        <button id="btn-salvar-edicao">Salvar Alterações</button>
+        <button id="btn-cancelar-edicao">Cancelar</button>
     </div>
 
-    <script type="module" src="./script.js"></script>
+    <!-- Firebase Config deve vir ANTES -->
     <script type="module" src="./firebaseConfig.js"></script>
+    <script type="module" src="./script.js"></script>
 </body>
 </html>

@@ -112,25 +112,21 @@ async function excluirFuncionario(idfuncionario) {
 }
 
 async function lidarclique(eventoDeClique) {
-    const btnexcluir = eventoDeClique.target.closest(".btn-excluir");
+    console.log("Clique detectado em:", eventoDeClique.target); // ajuda a debugar
 
-    if(btnexcluir){
-        const certeza = confirm("Tem certeza que deseja fazer essa exclusão");
+    const btnExcluir = eventoDeClique.target.closest(".btn-excluir");
 
-        if(certeza){
-
-            if (btnexcluir){
-            const idfuncionario = btnexcluir.dataset.id;
-            const exclusaoBemSucedida = await excluirFuncionario (idfuncionario);
-                
-
-                    if(exclusaoBemSucedida){
-                        carregarListaDeFuncionarios();
-                        alert('Funcionario excluido com sucesso!');
-                    }  
+    if (btnExcluir) {
+        const certeza = confirm("Tem certeza que deseja fazer essa exclusão?");
+        if (certeza) {
+            const idfuncionario = btnExcluir.dataset.id;
+            const sucesso = await excluirFuncionario(idfuncionario);
+            if (sucesso) {
+                carregarListaDeFuncionarios();
+                alert("Funcionário excluído com sucesso!");
             }
-        }else{
-        alert("Exclusao cancelada");
+        } else {
+            alert("Exclusão cancelada.");
         }
     }
     const btnEditar =  eventoDeClique.target.closest(".btn-Editar");
